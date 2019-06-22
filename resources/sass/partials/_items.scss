@@ -1,0 +1,27 @@
+.checklist-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+  .check {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $color-blue;
+    background: $color-white;
+    border-radius: 50%;
+
+    &.is-active {
+      background: $color-blue;
+    }
+  }
+  .item-title {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 0 14px;
+    line-height: 1em;
+  }
+}

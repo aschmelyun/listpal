@@ -1,0 +1,31 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  color: $color-dark-grey;
+  font-family: $ff-primary;
+}
+.header {
+  padding: 16px 0;
+  text-align: center;
+  border-bottom: 1px solid $color-light-grey;
+}
+.header-title {
+  font-family: $ff-alt;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+  letter-spacing: 0.5px;
+}
+.add-button {
+  display: block;
+  background: url('../images/plus.svg') no-repeat center center;
+  background-size: cover;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 17px;
+  right: 32px;
+  z-index: 9;
+}
