@@ -28,4 +28,9 @@ body {
   top: 17px;
   right: 32px;
   z-index: 9;
+  transition: all 0.15s ease-in-out;
+
+  &.is-exit {
+    transform: rotate(135deg);
+  }
 }
