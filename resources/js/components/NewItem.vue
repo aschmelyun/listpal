@@ -5,14 +5,14 @@
                 <div class="col-sm-12 col-md-6 offset-md-3">
                     <div class="row has-margin">
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="item" name="item" ref="itemInput" placeholder="My new task" v-model="newItem">
+                            <input type="text" class="form-control" id="item" name="item" ref="itemInput" v-model="newItem">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-6">
                             <button class="button button-primary" @click="handleSaveAddNew">Save + Add New</button>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-6">
                             <button class="button button-secondary" @click="handleSaveClose">Save + Close</button>
                         </div>
                     </div>
