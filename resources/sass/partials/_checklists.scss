@@ -23,15 +23,13 @@
 .new-item {
   position: fixed;
   width: 100%;
+  height: calc(100% - 58px);
   left: 0;
-  bottom: 0;
+  top: 58px;
   z-index: 99;
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%);
+  background: $color-white;
   display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  padding: 128px 0 32px;
+  align-items: center;
 
   .has-margin {
     margin-bottom: 20px;
@@ -58,24 +56,24 @@
 
   &.button-primary {
     color: $color-white;
-    background: $color-blue;
-    border: 2px solid $color-blue;
+    background: $color-dark-grey;
+    border: 2px solid $color-dark-grey;
 
     &:hover,
     &:active {
-      background: darken($color-blue, 5%);
-      border: 2px solid darken($color-blue, 5%);
+      background: darken($color-dark-grey, 5%);
+      border: 2px solid darken($color-dark-grey, 5%);
     }
   }
   &.button-secondary {
-    color: $color-blue;
+    color: $color-dark-grey;
     background: $color-white;
-    border: 2px solid $color-blue;
+    border: 2px solid $color-dark-grey;
 
     &:hover,
     &:active {
-      color: darken($color-blue, 5%);
-      border: 2px solid darken($color-blue, 5%);
+      color: darken($color-dark-grey, 5%);
+      border: 2px solid darken($color-dark-grey, 5%);
     }
   }
 }
@@ -83,18 +81,17 @@
   -webkit-appearance: none;
   display: block;
   width: 100%;
-  padding: 4px 0;
+  padding: 8px 16px;
   font-family: $ff-primary;
   font-size: 16px;
   font-weight: 500;
   color: $color-dark-grey;
-  border: none;
-  border-bottom: 2px solid $color-light-grey;
-  border-radius: 0;
+  border-radius: 32px;
+  border: 2px solid $color-light-grey;
   transition: all 0.15s ease-in-out;
 
   &:focus {
     outline: 0;
-    border-bottom: 2px solid $color-blue;
+    border-color: $color-dark-grey;
   }
 }
