@@ -1,27 +1,37 @@
 .checklist-item {
   display: flex;
   align-items: center;
-  padding: 16px 0;
+  padding: 14px 16px;
+  border-radius: 24px;
+  margin: 12px 0;
+  background: $color-light-grey;
 
   &:hover {
     cursor: pointer;
   }
   .check {
     display: block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid $color-blue;
-    background: $color-white;
+    width: 20px;
+    height: 20px;
+    background: $color-med-grey;
     border-radius: 50%;
-
-    &.is-active {
-      background: $color-blue;
-    }
+    transition: all 0.15s ease-in-out;
   }
   .item-title {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     margin: 0 0 0 14px;
     line-height: 1em;
+    transition: all 0.15s ease-in-out;
+  }
+  &.is-active {
+
+    .check {
+      background: $color-blue;
+    }
+    .item-title {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
   }
 }

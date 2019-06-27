@@ -1,23 +1,6 @@
 <template>
     <div class="list-items">
-        <section class="section incomplete">
-            <div class="section-header">
-                <h4 class="section-title">Incomplete</h4>
-                <span class="amount" v-text="incompleteItems.length + ' items'"></span>
-            </div>
-            <div class="section-body">
-                <checklist-item v-for="item in incompleteItems" :key="item.id" :item="item" @checked="handleItemChecked"></checklist-item>
-            </div>
-        </section>
-        <section class="section complete">
-            <div class="section-header">
-                <h4 class="section-title">Completed</h4>
-                <span class="amount" v-text="completeItems.length + ' items'"></span>
-            </div>
-            <div class="section-body">
-                <checklist-item v-for="item in completeItems" :key="item.id" :item="item" @checked="handleItemChecked"></checklist-item>
-            </div>
-        </section>
+        <checklist-item v-for="item in checklistItems" :key="item.id" :item="item" @checked="handleItemChecked"></checklist-item>
     </div>
 </template>
 <script>
@@ -63,16 +46,6 @@
             }
         },
         computed: {
-            incompleteItems() {
-                let incompleteItems = this.checklistItems.filter(item => !item.is_complete);
-
-                return incompleteItems ? incompleteItems : [];
-            },
-            completeItems() {
-                let completeItems = this.checklistItems.filter(item => item.is_complete);
-
-                return completeItems ? completeItems : [];
-            },
             showNewItem() {
                 return this.$parent.showNewItem;
             }
