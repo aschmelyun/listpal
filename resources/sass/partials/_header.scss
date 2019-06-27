@@ -3,7 +3,14 @@ body {
   color: $color-dark-grey;
   font-family: $ff-primary;
 }
+#app {
+  padding: 58px 0 0;
+}
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   padding: 16px 0;
   text-align: center;
   border-bottom: 1px solid $color-light-grey;
