@@ -25,7 +25,13 @@ class ItemController extends Controller
 
         event(new ItemAdded($item->checklist));
 
-        return $item->checklist;
+        $checklist = $item->checklist()
+            ->with(['items' => function($query) {
+                $query->orderBy('created_at', 'DESC');
+            }])
+            ->get();
+
+        return $checklist;
     }
 
     public function update($hash, Item $item, Request $request)
@@ -38,7 +44,13 @@ class ItemController extends Controller
 
         event(new ItemChecked($item->checklist));
 
-        return $item->checklist;
+        $checklist = $item->checklist()
+            ->with(['items' => function($query) {
+                $query->orderBy('created_at', 'DESC');
+            }])
+            ->get();
+
+        return $checklist;
     }
 
 }

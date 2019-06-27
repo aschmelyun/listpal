@@ -25,7 +25,9 @@ class ItemChecked implements ShouldBroadcast
     public function __construct(Checklist $checklist)
     {
         $this->checklist = $checklist;
-        $this->checklist->load('items');
+        $this->checklist->load(['items' => function($query) {
+            $query->orderBy('created_at', 'DESC');
+        }]);
     }
 
     /**

@@ -22,7 +22,6 @@ class ChecklistController extends Controller
     {
         $checklist = Checklist::where('hash', $hash)
             ->with(['items' => function($query) {
-                $query->orderBy('is_complete', 'ASC');
                 $query->orderBy('created_at', 'DESC');
             }])
             ->first();

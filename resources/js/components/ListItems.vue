@@ -1,6 +1,7 @@
 <template>
     <div class="list-items">
-        <checklist-item v-for="item in checklistItems" :key="item.id" :item="item" @checked="handleItemChecked"></checklist-item>
+        <checklist-item v-for="item in incompleteItems" :key="item.id" :item="item" @checked="handleItemChecked"></checklist-item>
+        <checklist-item v-for="item in completeItems" :key="item.id" :item="item" @checked="handleItemChecked"></checklist-item>
     </div>
 </template>
 <script>
@@ -33,6 +34,7 @@
             handleItemChecked(itemId) {
                 let itemIndex = this.checklistItems.findIndex(item => item.id === itemId);
                 let item = this.checklistItems[itemIndex];
+                this.checklistItems[itemIndex].is_complete = item.is_complete ? 0 : 1;
 
                 axios.post('/api/' + this.hash + '/' + item.id, {
                     is_complete: item.is_complete ? 0 : 1
@@ -48,6 +50,12 @@
         computed: {
             showNewItem() {
                 return this.$parent.showNewItem;
+            },
+            incompleteItems() {
+                return this.checklistItems.filter(item => !item.is_complete);
+            },
+            completeItems() {
+                return this.checklistItems.filter(item => item.is_complete);
             }
         }
     }
