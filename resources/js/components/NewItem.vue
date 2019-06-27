@@ -36,6 +36,7 @@
                 this.$emit('saved', this.newItem);
                 this.newItem = '';
                 this.$refs.itemInput.focus();
+                window.scrollTo(0, 0);
             },
             handleSaveClose() {
                 this.$emit('closed', this.newItem);

@@ -25,12 +25,12 @@
   width: 100%;
   height: 142px;
   left: 0;
-  bottom: 0;
+  top: 58px;
   z-index: 99;
   background: $color-white;
   display: flex;
   align-items: center;
-  border-top: 1px solid $color-light-grey;
+  border-bottom: 1px solid $color-light-grey;
 
   .has-margin {
     margin-bottom: 20px;
