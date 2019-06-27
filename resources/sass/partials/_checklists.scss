@@ -23,13 +23,14 @@
 .new-item {
   position: fixed;
   width: 100%;
-  height: calc(100% - 58px);
+  height: 142px;
   left: 0;
-  top: 58px;
+  bottom: 0;
   z-index: 99;
   background: $color-white;
   display: flex;
   align-items: center;
+  border-top: 1px solid $color-light-grey;
 
   .has-margin {
     margin-bottom: 20px;
