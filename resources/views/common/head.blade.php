@@ -42,4 +42,15 @@
     
     <meta name="msapplication-TileColor" content="#424242">
     <meta name="theme-color" content="#424242">
+
+    @if(env('GA_UA_CODE'))
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142997130-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '{{ env('GA_UA_CODE') }}');
+        </script>
+    @endif
 </head>
