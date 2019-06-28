@@ -5,7 +5,7 @@
                 <div class="col-sm-12 col-md-6 offset-md-3">
                     <div class="row has-margin">
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="item" name="item" ref="itemInput" autocapitalize="words" autocomplete="false" v-model="newItem">
+                            <input type="text" class="form-control" id="item" name="item" ref="itemInput" autocapitalize="words" autocomplete="false" v-model="newItem" @keyup.enter="handleSaveClose">
                         </div>
                     </div>
                     <div class="row">
