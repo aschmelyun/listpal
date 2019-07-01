@@ -3,23 +3,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="list-hash" content="{{ $checklist->hash ?? '' }}">
-    <title>{{ $checklist ? 'A list from ' . $checklist->created_at->format('M d') : 'Welcome' }} &larr; ListPal</title>
-    <meta name="description" content="Easily create and share lists that everyone can see update in realtime">
+    <title>{{ isset($checklist) ? 'A list from ' . $checklist->created_at->format('M d') : 'Welcome' }} &larr; ListPal</title>
+    <meta name="description" content="Create easily shareable to-do lists that automatically stay in sync and display updates in real time.">
     <link rel="stylesheet" type="text/css" href="{{ mix('/assets/css/app.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Assistant:700|Roboto:400,500,700&display=swap" rel="stylesheet">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="{{ $checklist ? $checklist->created_at->format('M d') . ' -' : '' }} ListPal">
+    <meta name="apple-mobile-web-app-title" content="{{ isset($checklist) ? $checklist->created_at->format('M d') . ' -' : '' }} ListPal">
     <meta name="mobile-web-app-capable" content="yes">
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $checklist ? 'A list from ' . $checklist->created_at->format('M d') : 'Welcome' }} &larr; ListPal">
-    <meta property="og:description" content="Easily create and share lists that everyone can see update in realtime">
+    <meta property="og:title" content="{{ isset($checklist) ? 'A list from ' . $checklist->created_at->format('M d') : 'Welcome' }} &larr; ListPal">
+    <meta property="og:description" content="Create easily shareable to-do lists that automatically stay in sync and display updates in real time.">
     <meta property="og:image" content="https://listpal.co/assets/images/icons/android-icon-192x192.png">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ $checklist ? 'A list from ' . $checklist->created_at->format('M d') : 'Welcome' }} &larr; ListPal">
-    <meta name="twitter:description" content="Easily create and share lists that everyone can see update in realtime">
+    <meta name="twitter:title" content="{{ isset($checklist) ? 'A list from ' . $checklist->created_at->format('M d') : 'Welcome' }} &larr; ListPal">
+    <meta name="twitter:description" content="Create easily shareable to-do lists that automatically stay in sync and display updates in real time.">
     <meta name="twitter:image" content="https://listpal.co/assets/images/icons/android-icon-192x192.png">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/apple-icon-57x57.png">

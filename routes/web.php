@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return 'home';
-});
+Route::view('/', 'home');
 
 Route::get('/new', [
     'as'    => 'checklists.create',

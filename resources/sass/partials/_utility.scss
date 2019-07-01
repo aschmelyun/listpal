@@ -1,0 +1,21 @@
+@each $direction in (center, left, right) {
+
+  .text-#{$direction} {
+    text-align: $direction;
+  }
+}
+
+.mb-high {
+  margin-bottom: 48px;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 96px;
+  }
+}
+.mb-high-md {
+  margin-bottom: 48px;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}

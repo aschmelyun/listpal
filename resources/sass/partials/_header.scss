@@ -8,12 +8,14 @@ body {
 }
 .header {
   position: fixed;
+  background: $color-white;
   width: 100%;
   top: 0;
   left: 0;
   padding: 16px 0;
   text-align: center;
   border-bottom: 1px solid $color-light-grey;
+  z-index: 99;
 }
 .header-title {
   font-family: $ff-alt;
