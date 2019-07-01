@@ -1,5 +1,9 @@
 .main {
-  padding-top: 58px;
+  padding: 58px 2.5% 0;
+
+  @include media-breakpoint-up(md) {
+    padding: 58px 0 0;
+  }
   
   .intro {
     width: 100%;
@@ -34,8 +38,13 @@
     text-align: center;
 
     img {
-      max-width: 360px;
-      margin: 0 24px;
+      max-width: 80%;
+      margin: 0 auto;
+
+      @include media-breakpoint-up(md) {
+        max-width: 360px;
+        margin: 0 24px;
+      }
     }
   }
   .is-screenshot {
@@ -51,9 +60,11 @@
   font-family: $ff-alt;
   font-weight: 700;
   font-size: 30px;
+  line-height: 38px;
 
   @include media-breakpoint-up(sm) {
     font-size: 35px;
+    line-height: 52px;
   }
 }
 .heading-secondary {
