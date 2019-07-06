@@ -13,6 +13,11 @@ const app = new Vue({
             disableButtons: false
         }
     },
+    mounted() {
+        let blurred = false;
+        window.onblur = function() { blurred = true; };
+        window.onfocus = function() { blurred && (location.reload()); };
+    },
     methods: {
         handleSaveNewItem(newItem) {
             this.disableButtons = true;
