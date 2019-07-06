@@ -9,6 +9,7 @@
         props: ['item'],
         methods: {
             handleItemChecked() {
+                this.item.is_complete = this.item.is_complete ? 0 : 1;
                 this.$emit('checked', this.item.id);
             }
         }

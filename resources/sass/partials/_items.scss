@@ -18,11 +18,23 @@
     transition: all 0.15s ease-in-out;
   }
   .item-title {
+    position: relative;
     font-size: 16px;
     font-weight: 500;
     margin: 0 0 0 14px;
     line-height: 1em;
     transition: all 0.15s ease-in-out;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background: $color-dark-grey;
+      transition: all 0.15s ease-in-out;
+    }
   }
   &.is-active {
 
@@ -31,7 +43,10 @@
     }
     .item-title {
       opacity: 0.5;
-      text-decoration: line-through;
+
+      &:after {
+        width: 100%;
+      }
     }
   }
 }
