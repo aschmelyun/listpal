@@ -41,4 +41,17 @@ class ItemController extends Controller
         return $item->checklist;
     }
 
+    public function destroy($hash, Item $item, Request $request)
+    {
+        if($item->checklist->hash !== $hash) {
+            return response()->json(['error' => 'This item not present in the correct checklist'], 403);
+        }
+
+        $item->delete();
+
+        event(new ItemAdded($item->checklist));
+
+        return $item->checklist;
+    }
+
 }

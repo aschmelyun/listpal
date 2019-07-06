@@ -49,4 +49,13 @@
       }
     }
   }
+  .trash {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/trash.svg') no-repeat center center;
+    background-size: 16px;
+    font-size: 0;
+    text-decoration: none !important;
+  }
 }

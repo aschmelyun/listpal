@@ -1,7 +1,10 @@
 <template>
     <div class="checklist-item" :class="{'is-active': locallyChecked}" @click="handleItemChecked">
         <span class="check"></span>
-        <h4 class="item-title" v-text="item.item"></h4>
+        <div class="flex-1 d-flex">
+            <h4 class="item-title" v-text="item.item"></h4>
+        </div>
+        <a href="#" class="trash" @click.prevent.stop="handleItemDeleted"></a>
     </div>
 </template>
 <script>
@@ -16,6 +19,9 @@
             handleItemChecked() {
                 this.locallyChecked = !this.locallyChecked;
                 this.$emit('checked', this.item.id);
+            },
+            handleItemDeleted() {
+                this.$emit('deleted', this.item.id);
             }
         }
     }

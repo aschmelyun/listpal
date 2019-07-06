@@ -4,7 +4,12 @@
     text-align: $direction;
   }
 }
+@for $num from 1 through 4 {
 
+  .flex-#{$num} {
+    flex: $num;
+  }
+}
 .mb-high {
   margin-bottom: 48px;
 
