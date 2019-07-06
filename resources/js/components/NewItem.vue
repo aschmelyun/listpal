@@ -10,10 +10,10 @@
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <button class="button button-primary" @click="handleSaveAddNew">Save + Add New</button>
+                            <button class="button button-primary" :disabled="disabled" @click="handleSaveAddNew">Save + Add New</button>
                         </div>
                         <div class="col-6">
-                            <button class="button button-secondary" @click="handleSaveClose">Save + Close</button>
+                            <button class="button button-secondary" :disabled="disabled" @click="handleSaveClose">Save + Close</button>
                         </div>
                     </div>
                 </div>
@@ -23,6 +23,7 @@
 </template>
 <script>
     export default {
+        props: ['disabled'],
         data() {
             return {
                 newItem: ''
