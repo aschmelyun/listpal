@@ -1,5 +1,5 @@
 <template>
-    <div class="checklist-item" :class="{'is-active': item.is_complete}" @click="handleItemChecked">
+    <div class="checklist-item" :class="{'is-active': locallyChecked}" @click="handleItemChecked">
         <span class="check"></span>
         <h4 class="item-title" v-text="item.item"></h4>
     </div>
@@ -7,9 +7,14 @@
 <script>
     export default {
         props: ['item'],
+        data() {
+            return {
+                locallyChecked: !!this.item.is_complete
+            }
+        },
         methods: {
             handleItemChecked() {
-                this.item.is_complete = this.item.is_complete ? 0 : 1;
+                this.locallyChecked = !this.locallyChecked;
                 this.$emit('checked', this.item.id);
             }
         }
