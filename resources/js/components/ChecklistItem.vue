@@ -23,6 +23,11 @@
             handleItemDeleted() {
                 this.$emit('deleted', this.item.id);
             }
+        },
+        watch: {
+            item() {
+                this.locallyChecked = !!this.item.is_complete;
+            }
         }
     }
 </script>
